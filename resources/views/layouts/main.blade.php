@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
 
-    <title>laravel-migration-seeder</title>
+    <title>laravel-migration-seeder @yield('title')</title>
 </head>
 <body>
-    
+    @include('partials.header')
+    @yield('main-content')
+    @include('partials.footer')
 </body>
 </html>

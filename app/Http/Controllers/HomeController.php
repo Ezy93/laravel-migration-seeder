@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
+        $trains = Train::all();
         $data = [
             "train" => new Train(),
+            "trains" => $trains,
         ];
         return view('trains.index', $data);
     }

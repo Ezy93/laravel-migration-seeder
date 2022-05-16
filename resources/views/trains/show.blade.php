@@ -1,15 +1,14 @@
+
 @extends('layouts.main')
 
-@section('title','trains')
+@section('title', 'train-details')
+    
 
 @section('main-content')
     <main>
         <div class="container-fluid">
             <div class="row">
-                
-                    @foreach ($trains as $train)
-                        <div class="col-3">
-                            <a href="{{route('trains.show', $train->id)}}">
+                        <div class="col-12">
                                 <div class="card mb-4">
                                     <div class="card-body">
                                         <h5 class="card-title"><span>Company:</span>{{' '.$train->company}}</h5>
@@ -32,15 +31,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </a>
                         </div>
-                    @endforeach
-                    <div class="col-12 d-flex justify-content-center">
-                        {{$trains->links()}}
-                    </div>
-                
             </div>
-
         </div>
     </main>
 @endsection

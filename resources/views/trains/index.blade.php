@@ -9,7 +9,7 @@
                 
                     @foreach ($trains as $train)
                         <div class="col-3">
-                            <div class="card">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h5 class="card-title"><span>Company:</span>{{' '.$train->company}}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted"><span>Train-code:</span>{{' '.$train->train_code}}</h6>
@@ -21,12 +21,12 @@
                                     <p class="card-text">
                                         @if (!$train->isDelete)
                                             @if ($train->isInTime)
-                                                <span>il treno arriverà in orario</span>
+                                                <span>Il treno arriverà in orario</span>
                                             @else
-                                                <span>il treno ha subito un leggero ritardo</span>
+                                                <span>Il treno ha subito un leggero ritardo</span>
                                             @endif
                                         @else
-                                            <span>Siamo spiacenti ma il treno è stato cancellato</span>
+                                            <span>Il treno è stato cancellato</span>
                                         @endif
                                     </p>
                                 </div>

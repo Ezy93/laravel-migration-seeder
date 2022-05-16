@@ -18,12 +18,13 @@ class TrainsTableSeeder extends Seeder
             $newTrain->company = $faker->word();
             $newTrain->departure_station = $faker->word();
             $newTrain->arrival_station = $faker->word();
-            $newTrain->departure_date = $faker->date('Y-m-d');
-            $newTrain->arrival_date = $faker->date('Y-m-d');
-            $newTrain->train_code = strval($faker->numerify('train-######'));
-            $newTrain->number_of_carriage = $faker->numberBetween(5,13);
+            $newTrain->departure_date = $faker->dateTimeBetween('-1 year', '+1 year');;
+            $newTrain->arrival_date = $faker->dateTimeBetween('-1 year', '+1 year');;
+            $newTrain->train_code = strval($faker->numerify('train-####'));
+            $newTrain->number_of_carriages = $faker->numberBetween(5,13);
             $newTrain->isInTime = $faker->boolean();
             $newTrain->isDelete = $faker->boolean();
+            $newTrain->save();
         }
     }
 }

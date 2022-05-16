@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index(){
         $trains = DB::table('trains')
         ->where('departure_date', '>=', date('Y-m-d'))
-        ->get();
+        ->paginate(8);
         $data = [
             "train" => new Train(),
             "trains" => $trains,
